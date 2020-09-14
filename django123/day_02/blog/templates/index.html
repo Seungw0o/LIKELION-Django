@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>index</h1>
+    {% for blog in blog %}
+    <a href="{% url 'detail' blog.id %}">
+        <div>
+            <h3>{{blog.title}}</h3>
+            <p>{{blog.pub_date}}</p>
+        </div>
+    </a>
+    <a href="{% url 'update' blog.id %}">수정하기</a>
+    <a href="{% url 'delete' blog.id %}">삭제하기</a>
+    {% endfor %}
+</body>
+</html>
